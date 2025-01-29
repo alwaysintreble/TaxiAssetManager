@@ -23,7 +23,7 @@
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
         <DebugType>none</DebugType>
         <Optimize>true</Optimize>
-        <OutputPath>bin\Release\$(TargetFramework)</OutputPath>
+        <OutputPath>bin\Release\$(TargetFramework)\$(AssemblyName)</OutputPath>
         <DefineConstants>TRACE</DefineConstants>
         <ErrorReport>prompt</ErrorReport>
     </PropertyGroup>
@@ -74,4 +74,9 @@
         </Reference>
     </ItemGroup>
 
+    <ItemGroup>
+        <Content Include="TaxiSkins\**">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+    </ItemGroup>
 </Project>

@@ -22,7 +22,14 @@ public class AssetManager
         // On.AssetMaster.GetPrefab += GetPrefab;
         // On.AssetMaster.GetSprite += GetSprite;
         // On.AssetMaster.Awake += MasterAwake;
+        On.PlayerScript.Awake += OnPlayerAwake;
         On.PlayerScript.TaxiTextureGlassGet += TaxiTextureGlassGet;
+    }
+
+    private void OnPlayerAwake(On.PlayerScript.orig_Awake orig, PlayerScript self)
+    {
+        SkinLoaded = false;
+        orig(self);
     }
 
     private Texture[] TaxiTextureGlassGet(On.PlayerScript.orig_TaxiTextureGlassGet orig, PlayerScript self)
