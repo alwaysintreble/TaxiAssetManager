@@ -3,7 +3,7 @@
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
         <Description>Simple asset swapper for Yellow Taxi Goes Vroom</Description>
-        <Version>0.1.0</Version>
+        <Version>0.2.0</Version>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <LangVersion>latest</LangVersion>
         <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
@@ -45,7 +45,7 @@
     <ItemGroup>
         <PackageReference Include="BepInEx.Analyzers" Version="1.0.8" PrivateAssets="all"/>
         <PackageReference Include="BepInEx.Core" Version="5.4.21" />
-        <PackageReference Include="com.alwaysintreble.Chauffeur" Version="0.1.0" />
+        <PackageReference Include="com.alwaysintreble.Chauffeur" Version="0.2.0" />
         <PackageReference Include="UnityEngine.Modules" Version="2020.3.48" IncludeAssets="compile"/>
     </ItemGroup>
 

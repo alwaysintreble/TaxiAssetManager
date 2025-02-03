@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using Chauffeur.Managers;
-using Chauffeur.Utils;
+using Chauffeur.Utils.MenuUtils;
 using TaxiAssetManager.AssetSwapping;
 using UnityEngine;
 
@@ -64,6 +64,7 @@ public class AssetManager
             {
                 throw new ArgumentException($"{file} is invalid. Must be png or jpg");
             }
+
             LoadImage(file);
         }
     }
@@ -71,34 +72,34 @@ public class AssetManager
     private void MasterAwake(On.AssetMaster.orig_Awake orig, AssetMaster self)
     {
         orig(self);
-        Plugin.BepinLogger.LogDebug("sounds");
+        AssetManagerMain.BepinLogger.LogDebug("sounds");
         foreach (var sound in self.soundsDict.Keys)
         {
-            Plugin.BepinLogger.LogDebug(sound);
+            AssetManagerMain.BepinLogger.LogDebug(sound);
         }
 
-        Plugin.BepinLogger.LogDebug("music");
+        AssetManagerMain.BepinLogger.LogDebug("music");
         foreach (var song in self.ostsDict.Keys)
         {
-            Plugin.BepinLogger.LogDebug(song);
+            AssetManagerMain.BepinLogger.LogDebug(song);
         }
 
-        Plugin.BepinLogger.LogDebug("prefabs");
+        AssetManagerMain.BepinLogger.LogDebug("prefabs");
         foreach (var prefab in self.prefabsDict.Keys)
         {
-            Plugin.BepinLogger.LogDebug(prefab);
+            AssetManagerMain.BepinLogger.LogDebug(prefab);
         }
 
-        Plugin.BepinLogger.LogDebug("textures");
+        AssetManagerMain.BepinLogger.LogDebug("textures");
         foreach (var texture in self.textures2DDict.Keys)
         {
-            Plugin.BepinLogger.LogDebug(texture);
+            AssetManagerMain.BepinLogger.LogDebug(texture);
         }
 
-        Plugin.BepinLogger.LogDebug("sprites");
+        AssetManagerMain.BepinLogger.LogDebug("sprites");
         foreach (var sprite in self.spritesDict.Keys)
         {
-            Plugin.BepinLogger.LogDebug(sprite);
+            AssetManagerMain.BepinLogger.LogDebug(sprite);
         }
     }
 
@@ -106,7 +107,7 @@ public class AssetManager
     {
         if (spritename.Contains("TaxiGlass"))
         {
-            Plugin.BepinLogger.LogDebug($"Getting a taxi sprite! {spritename}");
+            AssetManagerMain.BepinLogger.LogDebug($"Getting a taxi sprite! {spritename}");
         }
 
         return orig(spritename);
@@ -116,7 +117,7 @@ public class AssetManager
     {
         if (texturename.Contains("TaxiGlass"))
         {
-            Plugin.BepinLogger.LogDebug($"Getting a taxi texture! {texturename}");
+            AssetManagerMain.BepinLogger.LogDebug($"Getting a taxi texture! {texturename}");
         }
 
         return orig(texturename);
@@ -126,7 +127,7 @@ public class AssetManager
     {
         if (prefabname.Contains("TaxiGlass"))
         {
-            Plugin.BepinLogger.LogDebug($"Getting a taxi prefab! {prefabname}");
+            AssetManagerMain.BepinLogger.LogDebug($"Getting a taxi prefab! {prefabname}");
         }
 
         return orig(prefabname);
@@ -142,7 +143,7 @@ public class AssetManager
         catch (Exception e)
         {
             if (e is DirectoryNotFoundException) return;
-            Plugin.BepinLogger.LogError(e);
+            AssetManagerMain.BepinLogger.LogError(e);
         }
     }
 
