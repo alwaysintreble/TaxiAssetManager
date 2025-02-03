@@ -1,6 +1,14 @@
 {
   "versions": [
     {
+      "mod_version": "0.2.0",
+      "download_url": "https://github.com/alwaysintreble/TaxiAssetManager/releases/download/v0.2.0/TaxiAssetManager-0.2.0.zip",
+      "sha256": "193f36e9392409f09d01444a799ab5760c6a789d8a1edc8a1dc4da61fbc27846",
+      "changelog": [
+        "maintenance update"
+      ]
+    },
+    {
       "mod_version": "0.1.0",
       "download_url": "https://github.com/alwaysintreble/TaxiAssetManager/releases/download/v0.1.0/TaxiAssetManager-0.1.0.zip",
       "sha256": "8557b9db1dbe4fa6b3d58a6d3175bae17490b9027549a1c02ace95e60351fb98",
